@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Home</title>
+    </head>
+
+    <body>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/posts">All Posts</a></li>
+            </ul>
+        </nav>
+        <h1>The Town Crier</h1>
+        <% if (name !== '') { %>
+        <h2>Hello, <%= name %></h2>
+        <% } %>
+        <h3>All Posts</h3>
+        <ul>
+            <% for (let i=0; i < posts.length; i++) { %>
+            <li>
+                <h4><%= posts[i].title %></h4>
+                <p><%= posts[i].content %></p>
+            </li>
+            <% } %>
+        </ul>
+    </body>
+</html>

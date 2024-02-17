@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/posts">All Posts</a></li>
+        </ul>
+    </nav>
+    <h1>The Town Crier</h1>
+    <h3>Latest Post</h3>
+    <h4>
+        <%= posts[posts.length - 1].title %>
+    </h4>
+    <p>
+        <%= posts[posts.length - 1].content %>
+    </p>
+
+    <form action="/submitForm" method="post">
+        <label for="name">Enter your name:</label>
+        <input type="text" id="name" name="name" required>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+
+</html>
