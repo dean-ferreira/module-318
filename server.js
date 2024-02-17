@@ -1,6 +1,9 @@
 // Required express library
 const express = require('express');
 
+// Require Morgan
+const morgan = require('morgan');
+
 // Require the filesystem module
 const fs = require('fs');
 
@@ -9,6 +12,9 @@ const path = require('path');
 
 // Create an express application
 const app = express();
+
+// Middleware for loggin HTTP requests using Morgan
+app.use(morgan('dev'));
 
 // Require body-parser
 const bodyParser = require('body-parser');
