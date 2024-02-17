@@ -13,6 +13,9 @@ const path = require('path');
 // Create an express application
 const app = express();
 
+// Middleware for serving static files
+app.use(express.static('public'));
+
 // Middleware for loggin HTTP requests using Morgan
 app.use(morgan('dev'));
 
@@ -64,6 +67,11 @@ app.post('/submitForm', (req, res) => {
     const { name } = req.body;
     console.log('Received data:', name);
     res.redirect(`/posts/${name}`);
+});
+
+app.post('/download', (req, res) => {
+    const imagePath = __dirname + '/public/image.jpg';
+    res.download(imagePath);
 });
 
 // Start the server
