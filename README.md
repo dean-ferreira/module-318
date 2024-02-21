@@ -53,7 +53,15 @@ This assessment measures your understanding of Node and Express and your capabil
 
 ## Usage
 
--   You can start a server with nodemon but using the dev script:
+-   Start a server:
+    ```sh
+    npm start
+    ```
+-   To start a development server with nodemon:
     ```sh
     npm run dev
+    ```
+-   To start a development server within a Docker container:
+    ```sh
+    npm run docker-dev
     ```
