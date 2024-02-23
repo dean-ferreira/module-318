@@ -4,6 +4,11 @@ const express = require('express');
 // Create an express application
 const app = express();
 
+// Routers
+const statesRouter = require('./routes/states');
+
+app.use('/states', statesRouter);
+
 // Set the view engine to ejs
 app.set('view engine', 'ejs');
 
