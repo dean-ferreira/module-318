@@ -2,6 +2,8 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 
+const logger = require('./middlewares/logger');
+
 // Create an express application
 const app = express();
 
@@ -10,6 +12,8 @@ const statesRouter = require('./routes/states');
 const favoritesRouter = require('./routes/favorites');
 const usersRouter = require('./routes/users');
 
+// Middlewares
+app.use(logger);
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json({ extended: true }));
 
