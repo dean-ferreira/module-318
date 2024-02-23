@@ -28,6 +28,19 @@ router.post('/new', (req, res) => {
     return res.status(201).json(user);
 });
 
+// Update User
+router.patch('/:id', (req, res) => {
+    const user = users.find((user) => user.id === parseInt(req.params.id));
+    if (!user) {
+        return res.status(404).json({ message: 'User not found' });
+    }
+    user.name = req.body.name || user.name;
+    user.email = req.body.email || user.email;
+    user.password = req.body.password || user.password;
+    user.role = req.body.role || user.role;
+    return res.status(200).json(user);
+});
+
 // Get User By ID
 router.get('/:id', (req, res) => {
     res.json(users.find((user) => user.id === parseInt(req.params.id)));
