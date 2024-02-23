@@ -4,6 +4,9 @@ const express = require('express');
 // Create an express application
 const app = express();
 
+// Set the view engine to ejs
+app.set('view engine', 'ejs');
+
 // Port
 const PORT = process.env.PORT || 3000;
 
