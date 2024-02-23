@@ -3,6 +3,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 
 const logger = require('./middlewares/logger');
+const unknownEndPoint = require('./middlewares/unknownEndPoint');
 
 // Create an express application
 const app = express();
@@ -31,6 +32,8 @@ const PORT = process.env.PORT || 3000;
 app.get('/', (req, res) => {
     res.render('index');
 });
+
+app.use(unknownEndPoint);
 
 // Start the server
 app.listen(PORT, () => {
