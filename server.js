@@ -8,12 +8,14 @@ const app = express();
 // Routers
 const statesRouter = require('./routes/states');
 const favoritesRouter = require('./routes/favorites');
+const usersRouter = require('./routes/users');
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json({ extended: true }));
 
 app.use('/states', statesRouter);
 app.use('/fav', favoritesRouter);
+app.use('/users', usersRouter);
 
 // Set the view engine to ejs
 app.set('view engine', 'ejs');
