@@ -33,4 +33,17 @@ router.post('/', (req, res) => {
     return res.status(201).json(favorite);
 });
 
+// Delete Favorite
+router.delete('/:id', (req, res) => {
+    const favorite = favorites.find(
+        (favorite) => favorite.id === parseInt(req.params.id)
+    );
+    if (!favorite) {
+        return res.status(404).json({ message: 'Favorite not found' });
+    }
+    const index = favorites.indexOf(favorite);
+    favorites.splice(index, 1);
+    return res.status(200).json(favorite);
+});
+
 module.exports = router;
