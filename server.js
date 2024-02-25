@@ -12,26 +12,24 @@ const app = express();
 const statesRouter = require('./routes/states');
 const favoritesRouter = require('./routes/favorites');
 const usersRouter = require('./routes/users');
+const indexRouter = require('./routes/index');
 
 // Middlewares
 app.use(logger);
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json({ extended: true }));
+app.use(express.static('public'));
 
 app.use('/states', statesRouter);
 app.use('/fav', favoritesRouter);
 app.use('/users', usersRouter);
+app.use('/', indexRouter);
 
 // Set the view engine to ejs
 app.set('view engine', 'ejs');
 
 // Port
 const PORT = process.env.PORT || 3000;
-
-// Routes
-app.get('/', (req, res) => {
-    res.render('index');
-});
 
 app.use(unknownEndPoint);
 
