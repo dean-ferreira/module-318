@@ -3,11 +3,60 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Title</title>
+        <title>FuelPrice USA</title>
+        <link rel="stylesheet" href="/stylesheets/styles.css" />
     </head>
-
     <body>
-        <h1>Home</h1>
-        <p>Welcome to the home page</p>
+        <header class="container">
+            <nav>
+                <a id="home-link" href="/">
+                    <h1 id="home-text">FuelPrice USA</h1>
+                </a>
+                <ul>
+                    <li><a href="">Link 1</a></li>
+                    <li><a href="">Link 2</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main class="container">
+            <h2 class="content-title">Cheapest Gas</h2>
+            <div class="state-container">
+                <% cheapestStates.forEach(state => { %>
+                <div class="state-tile">
+                    <h2 class="state-name"><%= state.name %></h2>
+                    <div class="fuel-selection">
+                        <div class="fuel-option">
+                            <h3 class="grade-name">Regular</h3>
+                            <div class="price" class="grade-price">
+                                $<%= state.gasoline %>
+                            </div>
+                            <button class="grade-button">87</button>
+                        </div>
+                        <div class="fuel-option">
+                            <h3 class="grade-name">Mid-Grade</h3>
+                            <div class="price" class="grade-price">
+                                $<%= state.midGrade %>
+                            </div>
+                            <button class="grade-button">89</button>
+                        </div>
+                        <div class="fuel-option">
+                            <h3 class="grade-name">Premium</h3>
+                            <div class="price" class="grade-price">
+                                $<%= state.premium %>
+                            </div>
+                            <button class="grade-button">93</button>
+                        </div>
+                        <div class="fuel-option">
+                            <h3 class="grade-name">Diesel</h3>
+                            <div class="price" class="grade-price">
+                                $<%= state.diesel %>
+                            </div>
+                            <button class="grade-button">Diesel</button>
+                        </div>
+                    </div>
+                </div>
+                <% }) %>
+            </div>
+        </main>
     </body>
 </html>
