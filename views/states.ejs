@@ -19,9 +19,21 @@
             </nav>
         </header>
         <main class="container">
-            <h2 class="content-title">Top 3 States with the Cheapest Gas</h2>
+            <h2 class="content-title">All States</h2>
+            <div class="sort-options">
+                <form action="/states" method="GET">
+                    <label for="sort">Sort by:</label>
+                    <select name="sort" id="sort">
+                        <option value="a-z" <% if (sort === 'a-z') { %>selected<% } %>>A - Z</option>
+                        <option value="z-a" <% if (sort === 'z-a') { %>selected<% } %>>Z - A</option>
+                        <option value="asc" <% if (sort === 'asc') { %>selected<% } %>>Low - High</option>
+                        <option value="desc" <% if (sort === 'desc') { %>selected<% } %>>High - Low</option>
+                    </select>
+                    <button type="submit">Sort</button>
+                </form>
+            </div>
             <div class="state-container">
-                <% cheapestStates.forEach(state => { %>
+                <% states.forEach(state => { %>
                 <div class="state-tile">
                     <h2 class="state-name"><%= state.name %></h2>
                     <div class="fuel-selection">
