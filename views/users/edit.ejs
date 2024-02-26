@@ -22,14 +22,29 @@
         <main class="container">
             <h2 class="content-title">My Profile</h2>
             <div class="user-form-container">
-            <form action="/users/10?_method=PATCH" method="POST" class="user-form">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" value="<%= user.name %>" />
-                <label for="email">Email:</label>
-                <input type="text" id="email" name="email" value="<%= user.email %>" />
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password" />
-                <input type="submit" value="Update" />
+                <form
+                    action="/users/10?_method=PATCH"
+                    method="POST"
+                    class="user-form"
+                >
+                    <label for="name">Name:</label>
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        value="<%= user.name %>"
+                    />
+                    <label for="email">Email:</label>
+                    <input
+                        type="text"
+                        id="email"
+                        name="email"
+                        value="<%= user.email %>"
+                    />
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" />
+                    <input type="submit" value="Update" />
+                </form>
             </div>
         </main>
     </body>
