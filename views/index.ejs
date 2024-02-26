@@ -54,6 +54,16 @@
                             <button class="grade-button">Diesel</button>
                         </div>
                     </div>
+                    <% let foundFavorite = false; for (let i = 0; i <
+                    userFavStates.length; i++) { %> <% if (state.name ===
+                    userFavStates[i].name) { foundFavorite = true;%>
+                    <form
+                        action="/fav/<%= state.favorite_id %>?_method=DELETE"
+                        method="POST"
+                    >
+                        <button type="submit">Remove</button>
+                    </form>
+                    <% }%> <% } %> <% if (!foundFavorite) { %>
                     <form action="/fav" method="POST">
                         <input
                             type="hidden"
@@ -68,6 +78,7 @@
                         />
                         <button type="submit">Add to Favorites</button>
                     </form>
+                    <% } %>
                 </div>
                 <% }) %>
             </div>

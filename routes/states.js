@@ -2,6 +2,20 @@ const express = require('express');
 const router = express.Router();
 
 const states = require('../data/states');
+const favorites = require('../data/favorites');
+
+function getFavStates(favArray) {
+    let favStates = [];
+    favArray.forEach((favorite) => {
+        states.find((state) => {
+            if (state.name === favorite.state_name) {
+                state['favorite_id'] = favorite.id;
+                favStates.push(state);
+            }
+        });
+    });
+    return favStates;
+}
 
 function calculateAveragePrice(state) {
     let average = 0;
@@ -46,9 +60,14 @@ router.get('/', (req, res) => {
     } else {
         sortedStates = states;
     }
+    const userFavorites = favorites.filter(
+        (favorite) => favorite.user_id === parseInt(10)
+    );
+    let userFavStates = getFavStates(userFavorites);
     return res.render('states/showStates', {
         states: sortedStates,
         sort: sort,
+        userFavStates: userFavStates,
     });
 });
 
