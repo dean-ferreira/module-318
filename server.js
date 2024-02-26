@@ -2,6 +2,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const bcrypt = require('bcrypt');
+const methodOverride = require('method-override');
 
 const logger = require('./middlewares/logger');
 const unknownEndPoint = require('./middlewares/unknownEndPoint');
@@ -21,6 +22,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json({ extended: true }));
 app.use(express.static('public'));
 app.use(express.urlencoded({ extended: false }));
+app.use(methodOverride('_method'));
 
 app.use('/states', statesRouter);
 app.use('/fav', favoritesRouter);
