@@ -1,4 +1,4 @@
-# sba-318 -[Visit Live Deployment](https://sba-318-5baaf06f883e.herokuapp.com/)
+# sba-318 - [Visit Live Deployment](https://sba-318-5baaf06f883e.herokuapp.com/)
 
 ## About the Project
 
