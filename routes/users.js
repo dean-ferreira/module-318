@@ -16,6 +16,10 @@ router.get('/new', (req, res) => {
     res.render('users/new');
 });
 
+router.get('/edit', (req, res) => {
+    res.render('users/edit', { user: users[9] });
+});
+
 // Login User
 router.post('/login', async (req, res) => {});
 
@@ -50,7 +54,7 @@ router.patch('/:id', (req, res) => {
     user.email = req.body.email || user.email;
     user.password = req.body.password || user.password;
     user.role = req.body.role || user.role;
-    return res.status(200).json(user);
+    return res.redirect('/');
 });
 
 // Get User By ID

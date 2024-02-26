@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>FuelPrice USA</title>
+        <link rel="stylesheet" href="/stylesheets/styles.css" />
+    </head>
+    <body>
+        <header class="container">
+            <nav>
+                <a id="home-link" href="/">
+                    <h1 id="home-text">FuelPrice USA</h1>
+                </a>
+                <ul>
+                    <li><a href="/states">All States</a></li>
+                    <li><a href="/fav/10">My Favorites</a></li>
+                    <li><a href="/users/edit">My Profile</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main class="container">
+            <h2 class="content-title">My Profile</h2>
+            <div class="user-form-container">
+            <form action="/users/10?_method=PATCH" method="POST" class="user-form">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" value="<%= user.name %>" />
+                <label for="email">Email:</label>
+                <input type="text" id="email" name="email" value="<%= user.email %>" />
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" />
+                <input type="submit" value="Update" />
+            </div>
+        </main>
+    </body>
+</html>
