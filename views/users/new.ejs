@@ -24,27 +24,26 @@
                 <form action="/users/new" method="POST" class="user-form">
                     <input
                         type="text"
-                        placeholder="Enter Your Name"
+                        placeholder="Name"
                         name="name"
                         required
                     />
                     <input
                         type="text"
-                        placeholder="Enter Your Email"
+                        placeholder="Email"
                         name="email"
                         required
                     />
                     <input
                         type="password"
-                        placeholder="Enter Your Password"
+                        placeholder="Password"
                         name="password"
                         required
                     />
-                    <input type="hidden" name="role" value="user" />
+                    <button type="submit" class="user-form-btn">
+                        Register
+                    </button>
                 </form>
-                <button type="submit" form="user-form" class="user-form-btn">
-                    Register
-                </button>
             </div>
         </main>
     </body>

@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const users = require('../data/users');
+const bcrypt = require('bcrypt');
 
 // Get All Users
 router.get('/', (req, res) => {
@@ -15,25 +16,28 @@ router.get('/new', (req, res) => {
     res.render('users/new');
 });
 
+// Login User
+router.post('/login', async (req, res) => {});
+
 // Create New User
-router.post('/new', (req, res) => {
-    if (
-        !req.body.name ||
-        !req.body.email ||
-        !req.body.password ||
-        !req.body.role
-    ) {
-        return res.status(400).json({ message: 'Please provide all fields' });
+router.post('/new', async (req, res) => {
+    if (!req.body.name || !req.body.email || !req.body.password) {
+        res.redirect('/users/new');
     }
-    const user = {
-        id: users.length + 1,
-        name: req.body.name,
-        email: req.body.email,
-        password: req.body.password,
-        role: req.body.role,
-    };
-    users.push(user);
-    return res.status(201).json(user);
+    try {
+        const hashedPassword = await bcrypt.hash(req.body.password, 10);
+        const user = {
+            id: users.length + 1,
+            name: req.body.name,
+            email: req.body.email,
+            password: hashedPassword,
+            role: 'user',
+        };
+        users.push(user);
+        res.redirect('/users/login');
+    } catch {
+        res.redirect('/users/new');
+    }
 });
 
 // Update User
