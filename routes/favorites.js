@@ -44,11 +44,11 @@ router.post('/', (req, res) => {
     const favorite = {
         id: favorites.length + 1,
         user_email: req.body.user_email,
-        user_id: req.body.user_id,
+        user_id: parseInt(req.body.user_id),
         state_name: req.body.state_name,
     };
     favorites.push(favorite);
-    return res.status(201).json(favorite);
+    return res.redirect('/fav/10');
 });
 
 // Delete Favorite

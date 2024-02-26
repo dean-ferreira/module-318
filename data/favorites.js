@@ -166,7 +166,7 @@ const favorites = [
         id: 30,
         user_email: 'user@gmail.com',
         user_id: 10,
-        state_name: 'Virigina',
+        state_name: 'Virginia',
     },
 ];
 
