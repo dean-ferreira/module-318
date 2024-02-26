@@ -1,10 +1,24 @@
 const express = require('express');
 const router = express.Router();
 const favorites = require('../data/favorites');
+const states = require('../data/states');
+
+function getFavStates(favArray) {
+    let favStates = [];
+    favArray.forEach((favorite) => {
+        states.find((state) => {
+            if (state.name === favorite.state_name) {
+                favStates.push(state);
+            }
+        });
+    });
+    return favStates;
+}
 
 // Get All Favorites
 router.get('/', async (req, res) => {
-    return res.json(favorites);
+    let favStates = getFavStates(favorites);
+    return res.json(favStates);
 });
 
 // Get All Favorites by User ID
@@ -15,7 +29,11 @@ router.get('/:id', (req, res) => {
     if (userFavorites.length === 0) {
         return res.status(404).send('Favorite not found');
     }
-    return res.json(userFavorites);
+    let favStates = getFavStates(userFavorites);
+
+    return res.render('favorites/showFaves', {
+        states: favStates,
+    });
 });
 
 // Create New Favorite
