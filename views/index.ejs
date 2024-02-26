@@ -54,6 +54,20 @@
                             <button class="grade-button">Diesel</button>
                         </div>
                     </div>
+                    <form action="/fav" method="POST">
+                        <input
+                            type="hidden"
+                            name="user_email"
+                            value="user@gmail.com"
+                        />
+                        <input type="hidden" name="user_id" value="10" />
+                        <input
+                            type="hidden"
+                            name="state_name"
+                            value="<%= state.name %>"
+                        />
+                        <button type="submit">Add to Favorites</button>
+                    </form>
                 </div>
                 <% }) %>
             </div>
