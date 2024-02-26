@@ -1,6 +1,7 @@
 // Required express library
 const express = require('express');
 const bodyParser = require('body-parser');
+const bcrypt = require('bcrypt');
 
 const logger = require('./middlewares/logger');
 const unknownEndPoint = require('./middlewares/unknownEndPoint');
@@ -19,6 +20,7 @@ app.use(logger);
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json({ extended: true }));
 app.use(express.static('public'));
+app.use(express.urlencoded({ extended: false }));
 
 app.use('/states', statesRouter);
 app.use('/fav', favoritesRouter);
