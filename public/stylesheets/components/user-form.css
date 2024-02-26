@@ -1,0 +1,35 @@
+.user-form-container {
+    margin-top: 2.5em;
+    margin-bottom: 2.5em;
+    padding: 3em;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 1em;
+    width: 10em;
+    text-align: center;
+}
+
+.user-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.user-form-input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin: 10px 0;
+    width: 100%;
+}
+
+.user-form-btn {
+    background-color: #3882F6;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    margin: 10px 0;
+    width: 75%;
+    font-size: 18px;
+    transition: background-color 0.2s ease;
+}

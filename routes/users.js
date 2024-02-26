@@ -7,6 +7,14 @@ router.get('/', (req, res) => {
     res.json(users);
 });
 
+router.get('/login', (req, res) => {
+    res.render('users/login');
+});
+
+router.get('/new', (req, res) => {
+    res.render('users/new');
+});
+
 // Create New User
 router.post('/new', (req, res) => {
     if (

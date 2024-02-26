@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>FuelPrice USA</title>
+        <link rel="stylesheet" href="/stylesheets/styles.css" />
+    </head>
+    <body>
+        <header class="container">
+            <nav>
+                <a id="home-link" href="/">
+                    <h1 id="home-text">FuelPrice USA</h1>
+                </a>
+                <ul>
+                    <li><a href="/states">All States</a></li>
+                    <li><a href="/users/login">Login</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main class="container">
+            <h2 class="content-title">Register</h2>
+            <div class="user-form-container">
+                <form action="/users/new" method="POST" class="user-form">
+                    <input
+                        type="text"
+                        placeholder="Enter Your Name"
+                        name="fname"
+                        required
+                    />
+                    <input
+                        type="text"
+                        placeholder="Enter Your Email"
+                        name="email"
+                        required
+                    />
+                    <input
+                        type="password"
+                        placeholder="Enter Your Password"
+                        name="psw"
+                        required
+                    />
+                    <input type="hidden" name="role" value="user" />
+                </form>
+                <button type="submit" form="user-form" class="user-form-btn">
+                    Register
+                </button>
+            </div>
+        </main>
+    </body>
+</html>
