@@ -158,21 +158,15 @@ const favorites = [
 
     {
         id: 29,
-        user_email: 'mgarcia@gmail.com',
+        user_email: 'user@gmail.com',
         user_id: 10,
         state_name: 'Oregon',
     },
     {
         id: 30,
-        user_email: 'mgarcia@gmail.com',
+        user_email: 'user@gmail.com',
         user_id: 10,
-        state_name: 'Texas',
-    },
-    {
-        id: 31,
-        user_email: 'mgarcia@gmail.com',
-        user_id: 10,
-        state_name: 'Virginia',
+        state_name: 'Virigina',
     },
 ];
 

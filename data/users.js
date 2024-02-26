@@ -64,9 +64,9 @@ const users = [
     },
     {
         id: 10,
-        name: 'Matthew Garcia',
-        email: 'mgarcia@gmail.com',
-        password: 'matt456',
+        name: 'Test User',
+        email: 'user@gmail.com',
+        password: 'user123',
         role: 'user',
     },
 ];
