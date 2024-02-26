@@ -8,6 +8,7 @@ function getFavStates(favArray) {
     favArray.forEach((favorite) => {
         states.find((state) => {
             if (state.name === favorite.state_name) {
+                state['favorite_id'] = favorite.id;
                 favStates.push(state);
             }
         });
