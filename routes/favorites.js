@@ -62,7 +62,7 @@ router.delete('/:id', (req, res) => {
     }
     const index = favorites.indexOf(favorite);
     favorites.splice(index, 1);
-    return res.status(200).json(favorite);
+    return res.redirect('/fav/10');
 });
 
 module.exports = router;

@@ -54,6 +54,12 @@
                             <button class="grade-button">Diesel</button>
                         </div>
                     </div>
+                    <form
+                        action="/fav/<%= state.favorite_id %>?_method=DELETE"
+                        method="POST"
+                    >
+                        <button type="submit">Remove</button>
+                    </form>
                 </div>
                 <% }) %>
             </div>
