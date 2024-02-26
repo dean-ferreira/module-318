@@ -46,7 +46,10 @@ router.get('/', (req, res) => {
     } else {
         sortedStates = states;
     }
-    return res.render('states', { states: sortedStates, sort: sort });
+    return res.render('states/showStates', {
+        states: sortedStates,
+        sort: sort,
+    });
 });
 
 // Get State by Name
