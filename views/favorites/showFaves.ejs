@@ -21,7 +21,9 @@
         <main class="container">
             <h2 class="content-title">My Favorites</h2>
             <div class="state-container">
-                <% states.forEach(state => { %>
+                <% if (states.length === 0) { %>
+                <h3>You have no favorites yet!</h3>
+                <% } %> <% states.forEach(state => { %>
                 <div class="state-tile">
                     <h2 class="state-name"><%= state.name %></h2>
                     <div class="fuel-selection">

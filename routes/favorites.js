@@ -28,7 +28,9 @@ router.get('/:id', (req, res) => {
         (favorite) => favorite.user_id === parseInt(req.params.id)
     );
     if (userFavorites.length === 0) {
-        return res.status(404).send('Favorite not found');
+        return res.render('favorites/showFaves', {
+            states: [],
+        });
     }
     let favStates = getFavStates(userFavorites);
 
